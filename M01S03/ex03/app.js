@@ -70,3 +70,13 @@ console.log(
 );
 
 console.log((andra.friends.dragos.name + andra.friends.dragos.surname).length);
+
+// Pct 5 Afiseaza numele complet al lui Dragos folosind obiectul Larry.
+console.log(
+  `${larry.friends.steven.friends.dragos.name} ${larry.friends.steven.friends.dragos.surname}`,
+);
+
+// Pct 6 Afiseaza numele complet a lui Larry folosind obiectul Dragos.
+console.log(
+  `${dragos.friends.steven.friends.larry.name} ${dragos.friends.steven.friends.larry.surname}`,
+);
