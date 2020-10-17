@@ -28,3 +28,18 @@ messageParagraph.innerText = message;
 // console.log(`Valoarea este ${value} si este ${word}`);
 
 // // console.log(`Valoarea este: ${value}`);
+
+// Folosind metoda prompt() afiseaza in pagina mesajul:
+//  “Numarul introdus este mai mic | mai mare decat 20.”
+var message2Paragraph = document.getElementById('message2');
+
+var word = 'mai mic';
+
+if (value <= 20) {
+  word = 'mai mic';
+} else {
+  word = 'mai mare';
+}
+
+var message2 = `Numarul introdus este ${word} decat 20.`;
+message2Paragraph.innerText = message2;
