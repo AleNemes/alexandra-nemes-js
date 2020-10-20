@@ -50,18 +50,14 @@ console.log(2020 - person.pets[2].age);
 // Foloseste anul curent.
 console.log(2020 - person.birthYear - person.pets[0].age);
 
-var difference = {
-  year: '25',
-};
+var difference = 25;
 
 // Salveaza numele animalului de pe pozitia 0 intr-o variabila numita petName.
-var petName = {
-  name: 'Lady',
-};
+var petName = person.petName[0].name;
 
 // Afiseaza propozitia: “Intre firstName si petName este o diferenta de difference ani”.
 console.log(
-  `Intre ${person.firstName} si ${petName.name} este o diferenta de ${difference.year} ani`,
+  `Intre ${person.firstName} si ${petName} este o diferenta de ${difference} ani`,
 );
 
 // In documentul HTML creeaza o lista neordonata <ul> cu 4 elemente goale <li>.
