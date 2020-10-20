@@ -35,11 +35,11 @@ var message2Paragraph = document.getElementById('message2');
 
 var word = 'mai mic';
 
-if (value <= 20) {
-  word = 'mai mic';
+if (value < 20) {
+  word = 'mai mic decat';
 } else {
-  word = 'mai mare';
+  word = 'mai mare decat';
 }
 
-var message2 = `Numarul introdus este ${word} decat 20.`;
+var message2 = `Numarul introdus este ${word} 20.`;
 message2Paragraph.innerText = message2;
