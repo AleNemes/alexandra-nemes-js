@@ -50,7 +50,7 @@ console.log(2020 - person.pets[2].age);
 // Foloseste anul curent.
 console.log(2020 - person.birthYear - person.pets[0].age);
 
-var difference = 25;
+var difference = 2020 - person.birthYear - person.pets[0].age;
 
 // Salveaza numele animalului de pe pozitia 0 intr-o variabila numita petName.
 var petName = person.petName[0].name;
