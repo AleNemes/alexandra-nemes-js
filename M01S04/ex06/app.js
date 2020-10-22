@@ -164,11 +164,7 @@ for (let i = 0; i < friendsLength; i++) {
 console.log(totalAge);
 
 // Pct 13 Folosind un for, afiseaza suma anilor  persoanelor.
-let sumAge =
-  person.age +
-  person.friends[0].age +
-  person.friends[1].age +
-  person.friends[2].age;
+let sumAge = person.age + person.friendsLength.age;
 for (let i = 0; i < friendsLength; i++) {
   const friend = person.friends[i];
 }
@@ -176,7 +172,9 @@ console.log(sumAge);
 
 // Pct 14 Afiseaza diferenta de varsta dintre persoana
 // si prietenii din arrayul friends.
-let difference = person.age - totalAge;
+let difference =
+  person.age -
+  (person.friends[0].age + person.friends[1].age + person.friends[2].age);
 for (let i = 0; i < friendsLength; i++) {
   console.log(difference);
 }
