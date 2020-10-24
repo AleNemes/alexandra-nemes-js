@@ -64,3 +64,37 @@ for (let i = 0; i < friendsLength; i++) {
 
   console.log(`${friend.name} ${friend.surname}`);
 }
+
+console.warn(`
+Pct 4. Folosind o bucla for afiseaza proprietatea name a
+tuturor obiectelor din arrayul friends.
+`);
+for (let i = 0; i < friendsLength; i++) {
+  let friend = friends[i];
+
+  console.log(friend.name);
+}
+
+console.warn(`
+Pct 5 Afiseaza numele complet al tuturor prietenilor.
+`);
+for (let i = 0; i < friendsLength; i++) {
+  let friend = friends[i];
+
+  console.log(`${friend.name} ${friend.surname}`);
+}
+
+console.warn(`
+Pct 6 Folosind keywordul break, afiseaza numele complet al prietenilor
+ dar opeste bucla la primul surname care are numarul de caractere mai
+  mare sau egal decat 9.
+`);
+for (let i = 0; i < friendsLength; i++) {
+  let friend = friends[i];
+
+  if (`${friend.surname}`.length >= 9) {
+    break;
+  }
+
+  console.log(`${friend.name} ${friend.surname}`);
+}
