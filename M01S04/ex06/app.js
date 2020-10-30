@@ -160,19 +160,20 @@ for (let i = 0; i < friendsLength; i++) {
 console.log(friendsSumAge);
 
 // Pct 13 Folosind un for, afiseaza suma anilor  persoanelor.
-let sumAge = 0;
+let sumAge = person.age;
 for (let i = 0; i < friendsLength; i++) {
   const friend = person.friends[i];
 
-  sumAge = Math.abs(person.age + friend.age);
+  sumAge += friend.age;
 }
 console.log(sumAge);
 
 // Pct 14 Afiseaza diferenta de varsta dintre persoana
 // si prietenii din arrayul friends.
-let difference = 0;
+
 for (let i = 0; i < friendsLength; i++) {
   const friend = person.friends[i];
+  let difference = 0;
 
   difference = Math.abs(person.age - friend.age);
   console.log(difference);
@@ -196,9 +197,8 @@ for (let i = 0; i < friendsLength; i++) {
 let text = 'Prietenii mei sunt ';
 for (let i = friendsLength - 1; i >= 0; i--) {
   const friend = person.friends[i];
-  let punctuation = i === friendsLength - 1 ? ',' : '.';
+  let punctuation = i === friendsLength - 3 ? '.' : ',';
 
   text = `${text} ${person.friends[i].name} ${person.friends[i].surname}${punctuation}`;
-
-  text = console.log(text);
 }
+console.log(text);

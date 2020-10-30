@@ -34,12 +34,11 @@ let i = 1;
 // Pct 8 Folosind keywordul continue afiseaza doar numerele
 //  pare intre 1 si 32 (inclusiv).
 // while (i <= 66) {
-//   console.log(i);
-
-//   if (i % 2 === 0 <= 32) {
+//   if (i % 2 !== 0 <= 32) {
 //     continue;
 //   }
 
+//   console.log(i);
 //   i++;
 // }
 
@@ -48,11 +47,10 @@ let i = 1;
 // de numar intre 5 si limita superioara introduse.
 let testNumber = prompt('Introdu un numar:');
 let boundary = prompt('Introdu limita superioara');
-while (i <= 100) {
+while (i <= boundary) {
   console.log(i);
 
   if (i % testNumber !== 0) {
-    break;
   }
   i++;
 }
