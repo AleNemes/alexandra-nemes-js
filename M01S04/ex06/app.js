@@ -202,3 +202,5 @@ for (let i = friendsLength - 1; i >= 0; i--) {
   text = `${text} ${person.friends[i].name} ${person.friends[i].surname}${punctuation}`;
 }
 console.log(text);
+
+}
