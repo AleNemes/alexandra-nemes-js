@@ -34,7 +34,7 @@ person.pets.forEach((pet) => {
 
 // Pct 3 Folosind o bucla for afiseaza suma anilor animalelor.
 let totalAge = 0;
-for (i = 0; i < person.pets.length; i++) {
+for (let i = 0; i < person.pets.length; i++) {
   const pet = person.pets[i];
 
   totalAge += pet.age;
@@ -56,7 +56,7 @@ person.pets.forEach((pet) => {
 //  (repeta pentru toate intrarile din array).
 let petsLength = person.pets.length;
 let personAge = 2020 - person.birthYear;
-for (i = 0; i < petsLength; i++) {
+for (let i = 0; i < petsLength; i++) {
   const pet = person.pets[i];
 
   console.log(
@@ -69,7 +69,7 @@ for (i = 0; i < petsLength; i++) {
 // Pct 6 Folosind o bucla for afiseaza in ordine inversa numele
 // animalelor din array (.reverse() si inainte si dupa bucla).
 person.pets.reverse();
-for (i = 0; i < petsLength; i++) {
+for (let i = 0; i < petsLength; i++) {
   const pet = person.pets[i];
 
   console.log(pet.name);
@@ -87,7 +87,7 @@ person.pets.reverse();
 // afiseaza propozitia: “xxx este cel mai batran animal pe care il am
 // si este cu y ani mai mic decat mine.”
 
-for (i = 0; i < petsLength; i++) {
+for (let i = 0; i < petsLength; i++) {
   const pet = person.pets[i];
   let ageDifference = personAge - pet.age;
 
@@ -99,7 +99,7 @@ for (i = 0; i < petsLength; i++) {
 let sentence = 'Am ';
 person.pets.forEach((pet, i, pets) => {
   let petSpecies = person.pets.species;
-  let punctuation = ',';
+  let punctuation = ', ';
 
   if (i === person.pets.length - 1) {
     punctuation = '.';

@@ -43,17 +43,23 @@ let windowSurface = calculateRectangleArea(3, 2);
 console.log(totalWallSurface - doorSurface - windowSurface);
 
 console.warn(`
-Creaza o functie wrapper pentru calculateRectangleArea() care sa primeasca 4 parametrii:
+Pct 4 Creaza o functie wrapper pentru calculateRectangleArea() care sa primeasca 4 parametrii:
 latimea si lungimea unui dreptunghi initial, apoi latimea si lungimea altui dreptunghi.
  Functia se va numi aggregateSurfaceArea().
 `);
 let calculateAggregateSurfaceArea = (L, l) => {
-  let rectangleSurface1 = calculateRectangleArea(48, 92);
-  let rectangleSurface2 = calculateRectangleArea(51, 102);
+  let rectangleSurface1 = calculateRectangleArea(L, l);
+  let rectangleSurface2 = calculateRectangleArea(L, l);
+  let aggregateSurfaceArea = rectangleSurface1 + rectangleSurface2;
 
   return aggregateSurfaceArea;
 };
-console.log(rectangleSurface1 + rectangleSurface2);
 
-// Pct 5 Folosind aceasta noua functie calculeaza suprafata totala a
-// doua dreptunghiuri de 48 pe 92 si 51 pe 102.
+console.warn(`
+Pct 5 Folosind aceasta noua functie calculeaza suprafata totala a
+doua dreptunghiuri de 48 pe 92 si 51 pe 102.
+`);
+let rectangleSurface1 = calculateRectangleArea(48, 92);
+let rectangleSurface2 = calculateRectangleArea(51, 102);
+let aggregateSurfaceArea = rectangleSurface1 + rectangleSurface2;
+console.log(aggregateSurfaceArea);

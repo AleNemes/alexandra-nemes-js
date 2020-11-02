@@ -37,4 +37,5 @@ Dar doua campuri de 150 pe 200 si 500 pe 300 in total?
 let field4Surface = calculateRectangleArea(150, 200);
 let field5Surface = calculateRectangleArea(500, 300);
 let totalFieldSurface = field4Surface + field5Surface;
-console.log(totalFieldSurface * 2.5);
+let fieldSurfaceyield1 = totalFieldSurface * yield1;
+console.log(fieldSurfaceyield1 * 2.5);
