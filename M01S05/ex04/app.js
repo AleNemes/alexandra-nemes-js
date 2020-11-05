@@ -47,19 +47,27 @@ Pct 4 Creaza o functie wrapper pentru calculateRectangleArea() care sa primeasca
 latimea si lungimea unui dreptunghi initial, apoi latimea si lungimea altui dreptunghi.
  Functia se va numi aggregateSurfaceArea().
 `);
-let calculateAggregateSurfaceArea = (L, l) => {
-  let rectangleSurface1 = calculateRectangleArea(L, l);
-  let rectangleSurface2 = calculateRectangleArea(L, l);
-  let aggregateSurfaceArea = rectangleSurface1 + rectangleSurface2;
+// let calculateAggregateSurfaceArea = (L, l) => {
+//   let rectangleSurface1 = calculateRectangleArea(L, l);
+//   let rectangleSurface2 = calculateRectangleArea(L, l);
+//   let aggregateSurfaceArea = rectangleSurface1 + rectangleSurface2;
 
-  return aggregateSurfaceArea;
-};
+//   return aggregateSurfaceArea;
+// };
 
 console.warn(`
 Pct 5 Folosind aceasta noua functie calculeaza suprafata totala a
 doua dreptunghiuri de 48 pe 92 si 51 pe 102.
 `);
-let rectangleSurface1 = calculateRectangleArea(48, 92);
-let rectangleSurface2 = calculateRectangleArea(51, 102);
-let aggregateSurfaceArea = rectangleSurface1 + rectangleSurface2;
-console.log(aggregateSurfaceArea);
+// let rectangleSurface1 = calculateRectangleArea(48, 92);
+// let rectangleSurface2 = calculateRectangleArea(51, 102);
+// let aggregateSurfaceArea = rectangleSurface1 + rectangleSurface2;
+// console.log(aggregateSurfaceArea);
+let calculateAggregateSurface = (L1, l1, L2, l2) => {
+  let surface1 = calculateRectangleArea(L1, l1);
+  let surface2 = calculateRectangleArea(L2, l2);
+
+  return surface1 + surface2;
+};
+
+console.log(calculateAggregateSurface(48, 92, 51, 102));
