@@ -22,25 +22,25 @@ console.warn(`
 Pct 4 Adauga un buton nou in document cu id-ul query si folosind addEventListener()
 ataseaza un eveniment care sa foloseasca metoda prompt() pentru a afla varsta utilizatorului.
 `);
-let query = document.getElementById('query');
+let messageParagraph = document.getElementById('message');
+
+let queryButton = document.getElementById('query');
 let eventHandler = () => {
-  prompt('Introdu varsta ta');
+  let age = prompt('Introdu varsta ta');
+  let sentence = `Ai ${age} ani`;
+  let message = `Ai ${age} ani`;
+  console.log(sentence);
+  messageParagraph.innerText = message;
 };
 
-query.addEventListener('click', eventHandler);
+queryButton.addEventListener('click', eventHandler);
 
 console.warn(`
 Pct 5 Salveaza rezultatul metodei prompt intr-o variabila si afiseaza in consola
 folosind template strings: “Ai aa ani.”.
 `);
-let age = prompt('Introdu varsta ta');
-let sentence = `Ai ${age} ani`;
-console.log(sentence);
 
 console.warn(`
 Pct 6 Creaza un paragraf cu idul message si folosind getElementById() stocheaza elementul
  intr-o variabila, apoi folosind innerText (textContent), afiseaza mesajul de mai devreme in acest paragraf.
 `);
-let messageParagraph = document.getElementById('message');
-let message = `Ai ${age} ani`;
-messageParagraph.innerText = message;
