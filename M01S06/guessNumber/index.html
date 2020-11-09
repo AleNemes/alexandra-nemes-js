@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Guess My Number</title>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+</head>
+<body>
+  <div class="background">
+    <h1>Guess My Number</h1>
+    <h3>Guess a number between 1 - 100</h3>
+    <p>Good Luck!</p>
+
+    <div class="buttons">
+      <button
+        type="button"
+        id="start"
+        class="start-btn"
+        onclick="start()"
+        value="submit"
+      >Start Game</button>
+
+      <button
+        type="button"
+        id="reset"
+        class="reset-btn"
+        value="submit"
+      >Reset Game</button>
+    </div>
+
+    <form
+      action=""
+      id="form"
+      class="form"
+    >
+      <label
+        for="userInput"
+        id="outPutText"
+      >Enter a number:</label>
+      <input
+        type="number"
+        id="userInput"
+        class="userInput"
+      >
+
+      <button
+        type="button"
+        id="btnCheck"
+        class="check-btn"
+      >Check</button>
+
+      <div id="high-or-low"></div>
+    </form>
+
+
+    <img
+      src="./img/source.gif"
+      alt=""
+    >
+
+
+
+
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
