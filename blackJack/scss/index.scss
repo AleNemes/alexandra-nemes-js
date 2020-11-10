@@ -1,6 +1,9 @@
 @import './../node_modules/bootstrap/scss/bootstrap';
 
+@import './reset';
+@import './seat';
+@import './card';
+
 body {
-  background: url('../img/pokertablebackgrund.jpg');
-  background-size: cover;
+  background: url('../img/Image.jpeg') repeat;
 }
