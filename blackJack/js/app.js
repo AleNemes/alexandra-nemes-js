@@ -46,3 +46,6 @@ let game = {
     });
   },
 };
+
+game.generateCards();
+console.log(game);
