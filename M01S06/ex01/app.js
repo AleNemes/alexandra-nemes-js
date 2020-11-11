@@ -40,10 +40,14 @@ let car = {
     return '0';
   },
   setSpeed: function () {
-    if () {
-
+    if (setSpeed > topSpeed) {
+      this.topSpeed;
     }
-  }
+
+    if (setSpeed < topReverseSpeed) {
+      this.topReverseSpeed;
+    }
+  },
 };
 
 // Pct 1 Adauga o proprietate booleana
@@ -66,8 +70,8 @@ console.log(
 console.warn(`
 Pct 7 Decelereaza masina cu 5 unitati apoi afisaza propozitia: "Viteza noua este speed km/h".
 `);
-let newspeed = car.speed - 5;
-console.log(`Viteza noua este ${newspeed} km/h.`);
+car.speed = car.speed - 5;
+console.log(`Viteza noua este ${car.speed} km/h.`);
 
 // Pct 8 Adauga o metoda numita stop() care sa faca proprietatea speed 0,
 //  apoi afiseaza viteza in corpul functiei.

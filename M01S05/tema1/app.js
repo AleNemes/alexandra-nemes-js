@@ -9,20 +9,21 @@
 //      “nnnn este ssss si are aaaa ani”
 //   b. Folosind metoda getAge calculeaza si salveaza intr-o variabila numita petAge
 //     varsta animalului si afiseaza propozitia: “Animalul meu are petAge ani”
-function calculateSurface() {
-  switch (surface) {
-    case calculateSquareSurface(L):
-      console.log(calculateSquareSurface);
-      break;
+function calculateSurface(L, l, h) {
+  if (arguments.length === 1) {
+    return L * L;
+  }
 
-    case calculateRectangleSurface(L, l):
-      console.log(calculateRectangleSurface);
-      break;
-
-    // case calculateRectangleSurface(L, l, h)
-    // console.log(calculateRectangleSurface);
+  if (arguments.length === 2) {
+    return L * l;
+  }
+  if (arguments.length === 3) {
+    return L * l * h;
   }
 }
+console.log(calculateSurface(2));
+console.log(calculateSurface(2, 3));
+console.log(calculateSurface(2, 3, 3));
 
 function calculateCircleArea(radius) {
   return Math.PI * radius * radius;
