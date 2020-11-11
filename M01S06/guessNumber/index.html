@@ -19,45 +19,42 @@
     <h3>Guess a number between 1 - 100</h3>
     <p>Good Luck!</p>
 
-    <div class="buttons">
-      <button
-        type="button"
-        id="start"
-        class="start-btn"
-        onclick="start()"
-        value="submit"
-      >Start Game</button>
 
-      <button
-        type="button"
-        id="reset"
-        class="reset-btn"
-        value="submit"
-      >Reset Game</button>
-    </div>
 
     <form
       action=""
       id="form"
       class="form"
     >
-      <label
-        for="userInput"
-        id="outPutText"
-      >Enter a number:</label>
+      <label for="guessField">Enter a number:</label>
       <input
         type="number"
-        id="userInput"
+        id="guessField"
         class="userInput"
       >
 
-      <button
-        type="button"
-        id="btnCheck"
-        class="check-btn"
-      >Check</button>
+      <div class="buttons">
+        <button
+          type="button"
+          id="submitGuess"
+          class="check-btn"
+          value="submit"
+        >Check Guess</button>
 
-      <div id="high-or-low"></div>
+        <button
+          type="button"
+          id="newGame"
+          class="restart-btn"
+          value="submit"
+        >Restart Game</button>
+      </div>
+
+
+      <p
+        id="result"
+        class="result"
+      ></p>
+
     </form>
 
 

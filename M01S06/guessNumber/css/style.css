@@ -66,13 +66,13 @@ body {
 }
 
 .buttons {
-  max-width: 400px;
+  max-width: 450px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0 auto;
 }
 
-.start-btn {
+.check-btn {
   background-color: #1abc9a;
   border-radius: 6px;
   border: none;
@@ -83,7 +83,7 @@ body {
   cursor: pointer;
 }
 
-.reset-btn {
+.restart-btn {
   background-color: #9b59b6;
   border-radius: 6px;
   border: none;
@@ -110,28 +110,6 @@ body {
   font-size: 20px;
 }
 
-.check-btn {
-  background-image: linear-gradient(90deg, #1abc9c, #3498db);
-  border-radius: 6px;
-  border: none;
-  color: #fff;
-  padding: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.all-guesses {
-  margin-top: 30px;
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.wrong {
-  background-color: #fe4c4c;
-  padding: 5px 20px;
-}
-
-.success {
-  background-color: #1abc9c;
-  padding: 5px 20px;
+.background .result {
+  font-size: 32px;
 }
