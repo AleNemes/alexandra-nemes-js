@@ -9,6 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .background {
@@ -49,6 +50,10 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.background h1 {
+  margin-top: 20px;
 }
 
 .background h3 {
@@ -111,5 +116,10 @@ body {
 }
 
 .background .result {
-  font-size: 32px;
+  font-size: 28px;
+}
+
+.background .attempts {
+  font-size: 18px;
+  color: #fff;
 }

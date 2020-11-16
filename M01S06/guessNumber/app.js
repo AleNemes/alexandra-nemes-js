@@ -1,25 +1,68 @@
 let randomNumber = Math.floor(Math.random() * 100 + 1);
-let submitButton = document.getElementById('submitGuess');
-let newGameButton = document.getElementById('newGame');
-let result = document.getElementById('result');
+let playersGuess = 0;
+let guessesRemaining = 10;
+let gameState = '';
+let gameWon = false;
 
-submitButton.addEventListener('click', function () {
-  let userGuess = document.getElementById('guessField').value;
+let input = document.querySelector('#input');
+let output = document.querySelector('#output');
 
-  if (userGuess === randomNumber) {
-    result.innerText = 'You Win!!!';
-    result.style.color = '#1abc9a';
-  } else if (userGuess > randomNumber) {
-    result.innerText = 'Your number is too high! Try again!';
+let submitButton = document.querySelector('#submitGuess');
+let newGameButton = document.querySelector('#newGame');
+
+submitButton.addEventListener('click', clickHandler, false);
+// form.addEventListener('submit');
+
+function clickHandler() {
+  validateInput();
+}
+
+function playGame() {
+  guessesRemaining--;
+  let gameState = 'You have ' + guessesRemaining + 'more attempts';
+
+  playersGuess = parseInt(input.value);
+
+  if (playersGuess > randomNumber) {
+    output.innerHTML = 'Your number is too high! <br>' + gameState;
+    output.style.color = '#1abc9a';
+    if (guessesRemaining < 1) {
+      endGame();
+    }
+  } else if (playersGuess < randomNumber) {
+    output.innerHTML = 'Your number is too low! <br>' + gameState;
+    output.style.color = '#1abc9a';
+    if (guessesRemaining < 1) {
+      endGame();
+    }
   } else {
-    result.innerText = 'Your number is too low! Try again!';
-    result.style.color = '#1abc9a';
+    gameWon = true;
+    endGame();
   }
-});
+}
+
+function endGame() {
+  if (gameWon) {
+    output.innerHTML = 'You WIN!!! The number is ' + randomNumber;
+    output.style.color = '#9b59b6';
+  } else {
+    output.innerHTML =
+      'No more guesses left! <br> The number was ' + randomNumber;
+  }
+}
 
 newGameButton.addEventListener('click', function () {
-  result.innerText = 'Let`s play again!';
-  result.style.color = '#9b59b6';
-  document.getElementById('guessField').value = '';
-  randomNumber = Math.floor(Math.random() * 100 + 1);
+  output.innerText = 'Let`s play again!';
+  output.style.color = '#9b59b6';
+  document.getElementById('input').value = '';
 });
+
+function validateInput() {
+  playersGuess = parseInt(input.value);
+
+  if (isNaN(playersGuess)) {
+    output.innerHTML = 'Please enter a number.';
+  } else {
+    playGame();
+  }
+}

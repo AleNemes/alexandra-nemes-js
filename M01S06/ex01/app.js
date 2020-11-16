@@ -37,15 +37,15 @@ let car = {
     }, 3000);
   },
   stop: function () {
-    return '0';
+    this.speed = 0;
   },
   setSpeed: function () {
-    if (setSpeed > topSpeed) {
-      this.topSpeed;
+    if (speed > topSpeed) {
+      this.speed = this.topSpeed;
     }
 
-    if (setSpeed < topReverseSpeed) {
-      this.topReverseSpeed;
+    if (speed < topReverseSpeed) {
+      this.speed = this.topReverseSpeed;
     }
   },
 };
