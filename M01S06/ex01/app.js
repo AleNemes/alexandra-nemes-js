@@ -39,7 +39,7 @@ let car = {
   stop: function () {
     this.speed = 0;
   },
-  setSpeed: function () {
+  setSpeed: function (speed) {
     if (speed > topSpeed) {
       this.speed = this.topSpeed;
     }

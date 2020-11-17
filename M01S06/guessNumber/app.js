@@ -11,7 +11,15 @@ let submitButton = document.querySelector('#submitGuess');
 let newGameButton = document.querySelector('#newGame');
 
 submitButton.addEventListener('click', clickHandler, false);
-// form.addEventListener('submit');
+// submitButton.addEventListener('submit', playGame, false);
+
+window.addEventListener('keydown', keydownHandler, false);
+
+function keydownHandler(event) {
+  if (event.keyCode === 13) {
+    validateInput();
+  }
+}
 
 function clickHandler() {
   validateInput();
@@ -55,6 +63,9 @@ newGameButton.addEventListener('click', function () {
   output.innerText = 'Let`s play again!';
   output.style.color = '#9b59b6';
   document.getElementById('input').value = '';
+  gameWon = false;
+  guessesRemaining = 10;
+  randomNumber = Math.floor(Math.random() * 100 + 1);
 });
 
 function validateInput() {
