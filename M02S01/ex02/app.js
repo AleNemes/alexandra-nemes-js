@@ -9,7 +9,9 @@ class Vehicle {
   }
 
   displaySpeed() {
-    console.log(`Viteza curenta este: ${this.speed}`);
+    console.log(
+      `Viteza curenta a vehiculului ${this.make} este: ${this.speed}`,
+    );
   }
 
   getSpeed(format) {
@@ -37,15 +39,13 @@ class Vehicle {
     if (speed > this.topSpeed) {
       this.speed = this.topSpeed;
       return;
-    }
-
-    if (speed < this.topReverseSeep) {
+    } else if (speed < this.topReverseSeep) {
       this.speed = this.topReverseSeep;
       return;
+    } else {
+      this.speed = speed;
+      this.displaySpeed();
     }
-
-    this.speed = speed;
-    this.displaySpeed();
   }
 }
 

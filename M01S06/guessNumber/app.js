@@ -13,9 +13,7 @@ let newGameButton = document.querySelector('#newGame');
 submitButton.addEventListener('click', clickHandler, false);
 submitButton.addEventListener('submit', playGame(e) {
   e.preventDefault();
-},
-false,
-);
+}, false);
 
 // window.addEventListener('keydown', keydownHandler, false);
 

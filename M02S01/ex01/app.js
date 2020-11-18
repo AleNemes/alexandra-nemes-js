@@ -7,6 +7,8 @@ class Car {
     this.speed = speed;
 
     this.topSpeed = 160;
+    this.isTrunkOpen = false;
+    this.areLightsOn = false;
   }
 
   accelerate() {
@@ -24,6 +26,32 @@ class Car {
     this.speed = 0;
 
     console.log(this.speed);
+  }
+
+  openTrunk() {
+    this.isTrunkOpen = true;
+  }
+
+  closeTrunk() {
+    this.isTrunkOpen = false;
+  }
+
+  turnLightsOn() {
+    this.areLightsOn = true;
+  }
+
+  turnLightsOff() {
+    this.areLightsOn = false;
+  }
+
+  flashLights() {
+    this.turnLightsOn();
+    console.log(this.areLightsOn);
+
+    window.setTimeout(() => {
+      this.turnLightsOff();
+      console.log(this.areLightsOn);
+    }, 2000);
   }
 
   setSpeed(speed) {
@@ -68,4 +96,26 @@ Metoda trebuie sa verifice ca nu se depasesc limitele inferioare si superioare,
 caz in care se folosesc proprietatile topSpeed si topReverseSpeed
 `);
 
+// Pct 6 Adauga o proprietate booleana numita isTrunkOpen si asigneaza-i valoarea false.
+// Pct 7 Adauga metode numite openTrunk() si closeTrunk() care sa seteze proprietatea
+//  isTrunkOpen pe true, respectiv false.
+// Pct 8 Adauga o proprietate booleana numita areLightsOn si asigneaza-i valoarea false.
+// Pct  9 Adauga metode numite turnLightsOn() si turnLightsOff() care sa manipuleze valoarea.
+// Pct 10 Adauga o metoda numita flashLights() care sa apeleze cele doua metode in succesiune,
+//  folosind metoda window.setTimeout().
+// Pct 11 Adauga cele doua variabile (opel si audi) intr-un array numit cars. (var cars = [opel, audi])
+// Pct 12 Ruleaza o bucla prin forEach si afiseaza propozitiile (pentru fiecare din masini)
+// a. “Masina era marca make si se deplasa cu speed km/h”
+// b. In fiecare iteratie, decelereaza masina cu 5 unitati, apoi afiseaza:
+// “Viteza noua este speed km/h” (setSpeed(car.speed - 5))
+
 const cars = [audi, opel];
+cars.forEach((car) => {
+  console.log(
+    `Masina era marca ${this.make} si se deplasa cu ${this.speed} km/h`,
+  );
+
+  let newSpeed = car.speed - 5;
+
+  console.log(`Viteza noua este de ${newSpeed} km/h`);
+});
