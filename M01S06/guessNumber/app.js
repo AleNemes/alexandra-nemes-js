@@ -11,15 +11,19 @@ let submitButton = document.querySelector('#submitGuess');
 let newGameButton = document.querySelector('#newGame');
 
 submitButton.addEventListener('click', clickHandler, false);
-// submitButton.addEventListener('submit', playGame, false);
+submitButton.addEventListener('submit', playGame(e) {
+  e.preventDefault();
+},
+false,
+);
 
-window.addEventListener('keydown', keydownHandler, false);
+// window.addEventListener('keydown', keydownHandler, false);
 
-function keydownHandler(event) {
-  if (event.keyCode === 13) {
-    validateInput();
-  }
-}
+// function keydownHandler(event) {
+//   if (event.keyCode === 13) {
+//     validateInput();
+//   }
+// }
 
 function clickHandler() {
   validateInput();
