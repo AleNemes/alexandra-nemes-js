@@ -5,6 +5,7 @@ const hitButton = document.querySelector('.js-hit');
 const game = {
   cards: [],
   state: 'play',
+  // getter
   get card() {
     let cardsLength = this.cards.length;
     let randomIndex = Math.floor(Math.random() * cardsLength);
@@ -18,9 +19,9 @@ const game = {
   generateCards: function () {
     let upperLimit = 10;
     let suites = ['heart', 'club', 'spade', 'diamond'];
-    let noneNumericCards = ['J', 'Q', 'K'];
+    let nonNumericCards = ['J', 'Q', 'K'];
 
-    //this.cards = [];
+    // this.cards = [];
     this.cards.length = 0;
 
     suites.forEach((suite) => {
@@ -35,7 +36,7 @@ const game = {
         this.cards.push(cardObject);
       }
 
-      noneNumericCards.forEach((letter) => {
+      nonNumericCards.forEach((letter) => {
         let cardObject = {
           suite,
           value: 10,
@@ -73,9 +74,8 @@ const game = {
     this.renderState();
   },
   renderState: function () {
-    const documentFragment = document.createElement('div');
+    const documentFragment = document.createElement('section');
     documentFragment.classList.add('mt-4');
-
     if (this.state !== 'play') {
       const resetButton = document.createElement('button');
       resetButton.classList.add('button');
@@ -104,39 +104,38 @@ const player = {
   renderHand: function () {
     const documentFragment = new DocumentFragment();
     documentFragment.innerHTML = '';
-
     /*eslint-disable*/
     this.hand.forEach((card) => {
       const template = `
-      <div class="card${
-        ['diamond', 'heart'].includes(card.suite) === true ? ' card--red' : ''
-      }">
-      <div class="card__number card__number--primary">
-        <div class="card__digit">${card.displayValue}</div>
-
-        <div class="card__suite">
-          <svg
-            class="card__suite-icon"
-            viewBox="0 0 40 40"
-          >
-            <use xlink:href="#${card.suite}"></use>
-          </svg>
+        <div class="card${
+          ['diamond', 'heart'].includes(card.suite) === true ? ' card--red' : ''
+        }">
+          <div class="card__number card__number--primary">
+            <div class="card__digit">${card.displayValue}</div>
+            <div class="card__suite">
+              <svg
+                class="card__suite-icon"
+                viewBox="0 0 40 40"
+              >
+                <use xlink:href="#${card.suite}"></use>
+              </svg>
+            </div>
+          </div>
+          <!-- .card__number  -->
+          <div class="card__number card__number--secondary">
+            <div class="card__digit">${card.displayValue}</div>
+            <div class="card__suite">
+              <svg
+                class="card__suite-icon"
+                viewBox="0 0 40 40"
+              >
+                <use xlink:href="#${card.suite}"></use>
+              </svg>
+            </div>
+          </div>
+          <!-- .card__number  -->
         </div>
-      </div>
-
-      <div class="card__number card__number--secondary">
-        <div class="card__digit">${card.displayValue}</div>
-
-        <div class="card__suite">
-          <svg
-            class="card__suite-icon"
-            viewBox="0 0 40 40"
-          >
-            <use xlink:href="#${card.suite}"></use>
-          </svg>
-        </div>
-      </div>
-    </div>
+        <!-- .card  -->
       `;
 
       documentFragment.innerHTML += template;
@@ -149,7 +148,6 @@ const player = {
     this.hand.push(game.card);
 
     this.calculatePoints();
-    game.check(this);
 
     return this;
   },
@@ -158,7 +156,7 @@ const player = {
 
     this.hand.forEach((card) => {
       this.points += card.value;
-      //this.points = this.points + card.value
+      // this.points = this.points + card.value;
     });
 
     return this.points;
