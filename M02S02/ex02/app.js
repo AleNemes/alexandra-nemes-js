@@ -67,6 +67,10 @@ $(document).ready(() => {
     $skillsUl.append($skillLi);
 
     $skillInput.val('');
+
+    if ($skillLi.length === 0) {
+      $ul.remove('#skills-list');
+    }
   });
 
   // function version
