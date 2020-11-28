@@ -112,7 +112,7 @@ caz in care se folosesc proprietatile topSpeed si topReverseSpeed
 const cars = [audi, opel];
 cars.forEach((car) => {
   console.log(
-    `Masina era marca ${this.make} si se deplasa cu ${this.speed} km/h`,
+    `Masina era marca ${car.make} si se deplasa cu ${car.speed} km/h`,
   );
 
   let newSpeed = car.speed - 5;
