@@ -11,17 +11,47 @@ let submitButton = document.querySelector('#submitGuess');
 let newGameButton = document.querySelector('#newGame');
 
 submitButton.addEventListener('click', clickHandler, false);
-submitButton.addEventListener('submit', playGame(e) {
-  e.preventDefault();
-}, false);
+// form.addEventListener(
+//   'submit',
+//   function (e) {
+//     function playGame() {
+//       guessesRemaining--;
+//       let gameState = 'You have ' + guessesRemaining + 'more attempts';
 
-// window.addEventListener('keydown', keydownHandler, false);
+//       playersGuess = parseInt(input.value);
 
-// function keydownHandler(event) {
-//   if (event.keyCode === 13) {
-//     validateInput();
-//   }
-// }
+//       if (playersGuess > randomNumber) {
+//         output.innerHTML = 'Your number is too high! <br>' + gameState;
+//         output.style.color = '#1abc9a';
+//         if (guessesRemaining < 1) {
+//           endGame();
+//         }
+//       } else if (playersGuess < randomNumber) {
+//         output.innerHTML = 'Your number is too low! <br>' + gameState;
+//         output.style.color = '#1abc9a';
+//         if (guessesRemaining < 1) {
+//           endGame();
+//         }
+//       } else {
+//         gameWon = true;
+//         endGame();
+//       }
+//     }
+
+//     function endGame() {
+//       if (gameWon) {
+//         output.innerHTML = 'You WIN!!! The number is ' + randomNumber;
+//         output.style.color = '#9b59b6';
+//       } else {
+//         output.innerHTML =
+//           'No more guesses left! <br> The number was ' + randomNumber;
+//       }
+//     }
+
+//     e.preventDefault();
+//   },
+//   false,
+// );
 
 function clickHandler() {
   validateInput();
