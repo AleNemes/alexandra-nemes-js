@@ -56,6 +56,10 @@ const createSkillUl = () => {
       editMode = false;
 
       $element.parent().remove();
+
+      if ($('#skills-ul li').length === 0) {
+        $ul.remove();
+      }
     });
 
     $ul.on('click', '.edit', (event) => {
