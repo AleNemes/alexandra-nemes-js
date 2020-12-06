@@ -8,7 +8,6 @@ class Car {
     this.domId = `${this.make.toLowerCase()}${this.color}${Date.now()}`;
 
     this.displayDomSpeed();
-    this.newSpeed();
   }
 
   accelerate() {
