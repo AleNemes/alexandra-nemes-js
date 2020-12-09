@@ -255,7 +255,7 @@ const createFriendUl = () => {
 
       $element.parent().remove();
 
-      if ($('#friends-ul li').length === 0) {
+      if ($('#friends-list li').length === 0) {
         $ul.remove();
       }
     });
@@ -284,7 +284,9 @@ const createFriendUl = () => {
       let value = $saveButton.prev().val();
       let $parentLi = $saveButton.parents('li');
 
-      $parentLi.find('.friend-name .friend-surname .friend-age').text(value);
+      $parentLi.find('.friend-name').text(value);
+      $parentLi.find('.friend-surname').text(value);
+      $parentLi.find('.friend-age').text(value);
 
       editMode = false;
       $saveButton.parent().remove();
