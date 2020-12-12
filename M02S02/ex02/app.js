@@ -281,7 +281,7 @@ const createFriendUl = () => {
 
     $ul.on('click', '.friend-textwidget .save', function () {
       $saveButton = $(this);
-      let value = $saveButton.prev().val();
+      let value = $saveButton.siblings('.friend-age').val();
       let $parentLi = $saveButton.parents('li');
 
       $parentLi.find('.friend-name').text(value);

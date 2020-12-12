@@ -3,13 +3,14 @@ const img = document.querySelector('.image');
 const paragraph = img.parentElement;
 const loadedMessage = 'Imaginea s-a incarcat.';
 const p = document.getElementById('p');
+const loader = document.querySelector('.loader');
 
 img.addEventListener('load', () => {
   const messageContainer = document.createElement('span');
   messageContainer.innerText = loadedMessage;
 
   paragraph.append(messageContainer);
-
+  loader.remove();
   // const pContainer = document.createElement('span');
   // pContainer.innerText = loadedMessage;
 
