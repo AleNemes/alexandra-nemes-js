@@ -16,18 +16,21 @@ const createFriendTextInput = () => {
       $('<input>', {
         type: 'text',
         placeholder: 'Modifica numele',
+        class: 'modify-name',
       }),
     )
     .append(
       $('<input>', {
         type: 'text',
         placeholder: 'Modifica prenumele',
+        class: 'modify-surname',
       }),
     )
     .append(
       $('<input>', {
         type: 'text',
         placeholder: 'Modifca Varsta',
+        class: 'modify-age',
       }),
     )
     .append(
@@ -281,12 +284,14 @@ const createFriendUl = () => {
 
     $ul.on('click', '.friend-textwidget .save', function () {
       $saveButton = $(this);
-      let value = $saveButton.siblings('.friend-age').val();
+      let ageValue = $saveButton.siblings('.modify-age').val();
+      let surnameValue = $saveButton.siblings('.modify-surname').val();
+      let nameValue = $saveButton.siblings('.modify-name').val();
       let $parentLi = $saveButton.parents('li');
 
-      $parentLi.find('.friend-name').text(value);
-      $parentLi.find('.friend-surname').text(value);
-      $parentLi.find('.friend-age').text(value);
+      $parentLi.find('.friend-name').text(nameValue);
+      $parentLi.find('.friend-surname').text(surnameValue);
+      $parentLi.find('.friend-age').text(ageValue);
 
       editMode = false;
       $saveButton.parent().remove();
