@@ -12,11 +12,11 @@ setTimeout(() => {
 
 applyButton.addEventListener('click', () => {
   // event.currentTarget /////
-  // if (box.classList.contains(className)) {
-  //   box.classList.remove(className);
-  // } else {
-  //   box.classList.add(className);
-  // }
+  if (box.classList.contains(className)) {
+    box.classList.remove(className);
+  } else {
+    box.classList.add(className);
+  }
   box.classList.add(className);
 });
 
@@ -25,6 +25,6 @@ applyButton.addEventListener('click', () => {
 //   alert('animatia a luat sfarsit');
 // });
 
-box.addEventListener('transitionend', () => {
-  box.classList.toggle(className);
-});
+// box.addEventListener('transitionend', () => {
+//   box.classList.toggle(className);
+// });
