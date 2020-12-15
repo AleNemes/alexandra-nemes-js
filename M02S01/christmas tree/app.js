@@ -67,43 +67,43 @@ class Tree {
     this.starContainer.classList.add('tree__star');
     this.tree.append(this.starContainer);
 
-    this.star.classList.add('star');
+    this.star.classList.add('tree__star--top');
     this.star.style.backgroundColor = this.starColor;
     this.starContainer.append(this.star);
 
     // treetop ornaments
-    this.ornament1.classList.add('ornament, ornament--1');
-    this.ornament2.classList.add('ornament, ornament--2');
-    this.ornament3.classList.add('ornament, ornament--3');
-    this.ornament4.classList.add('ornament, ornament--4');
+    this.ornament1.classList.add('tree__ornament', 'tree__ornament--1');
+    this.ornament2.classList.add('tree__ornament', 'tree__ornament--2');
+    this.ornament3.classList.add('tree__ornament', 'tree__ornament--3');
+    this.ornament4.classList.add('tree__ornament', 'tree__ornament--4');
     this.treeTop.append(this.ornament1);
     this.treeTop.append(this.ornament2);
     this.treeTop.append(this.ornament3);
     this.treeTop.append(this.ornament4);
 
     //treeMiddle ornaments
-    this.ornament5.classList.add('ornament, ornament--5');
-    this.ornament6.classList.add('ornament, ornament--6');
-    this.ornament7.classList.add('ornament, ornament--7');
-    this.ornament8.classList.add('ornament, ornament--8');
+    this.ornament5.classList.add('tree__ornament', 'tree__ornament--5');
+    this.ornament6.classList.add('tree__ornament', 'tree__ornament--6');
+    this.ornament7.classList.add('tree__ornament', 'tree__ornament--7');
+    this.ornament8.classList.add('tree__ornament', 'tree__ornament--8');
     this.treeMiddle.append(this.ornament5);
     this.treeMiddle.append(this.ornament6);
     this.treeMiddle.append(this.ornament7);
     this.treeMiddle.append(this.ornament8);
 
     //treeBottom ornaments
-    this.ornament9.classList.add('ornament, ornament--9');
-    this.ornament10.classList.add('ornament, ornament--10');
-    this.ornament11.classList.add('ornament, ornament--11');
-    this.ornament12.classList.add('ornament, ornament--12');
-    this.ornament13.classList.add('ornament, ornament--13');
-    this.ornament14.classList.add('ornament, ornament--14');
+    this.ornament9.classList.add('tree__ornament', 'tree__ornament--9');
+    this.ornament10.classList.add('tree__ornament', 'tree__ornament--10');
+    this.ornament11.classList.add('tree__ornament', 'tree__ornament--11');
+    this.ornament12.classList.add('tree__ornament', 'tree__ornament--12');
+    this.ornament13.classList.add('tree__ornament', 'tree__ornament--13');
+    this.ornament14.classList.add('tree__ornament', 'tree__ornament--14');
 
     document.body.append(this.frame);
   }
 }
 
-let tree1 = new Tree(300, 400);
+let tree1 = new Tree(500, 400);
 tree1.render();
 
 function createSnowFlake() {

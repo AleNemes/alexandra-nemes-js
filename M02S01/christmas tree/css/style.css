@@ -8,11 +8,6 @@ body {
   background: #323975;
 }
 
-.container {
-  margin: auto;
-  max-width: 960px;
-}
-
 .fa-snowflake {
   color: #fff;
   position: absolute;
@@ -42,7 +37,7 @@ body {
   border-style: solid;
   border-color: transparent transparent #036d1e transparent;
   border-radius: 100%;
-  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
   z-index: 2;
 }
 
@@ -56,7 +51,7 @@ body {
   border-style: solid;
   border-color: transparent transparent #036d1e transparent;
   border-radius: 100%;
-  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
   z-index: 2;
 }
 
@@ -70,7 +65,7 @@ body {
   border-style: solid;
   border-color: transparent transparent #036d1e transparent;
   border-radius: 100%;
-  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
   z-index: 2;
 }
 
@@ -92,7 +87,7 @@ body {
   margin: 0 auto;
 }
 
-.star {
+.tree__star--top {
   margin-top: 40px;
   left: 5px;
   position: absolute;
@@ -101,13 +96,13 @@ body {
   border-style: solid;
   border-width: 0 25px 17px 25px;
   border-color: transparent transparent #ffd105 transparent;
-  -moz-transform: rotate(35deg);
-  -webkit-transform: rotate(35deg);
-  -ms-transform: rotate(35deg);
-  -o-transform: rotate(35deg);
+  transform: rotate(35deg);
+  transform: rotate(35deg);
+  transform: rotate(35deg);
+  transform: rotate(35deg);
 }
 
-.star:before {
+.tree__star--top:before {
   position: absolute;
   height: 0;
   width: 0;
@@ -117,13 +112,13 @@ body {
   border-style: solid;
   border-width: 0 25px 17px 25px;
   border-color: transparent transparent #ffd105 transparent;
-  -webkit-transform: rotate(-70deg);
-  -moz-transform: rotate(-70deg);
-  -ms-transform: rotate(-70deg);
-  -o-transform: rotate(-70deg);
+  transform: rotate(-70deg);
+  transform: rotate(-70deg);
+  transform: rotate(-70deg);
+  transform: rotate(-70deg);
 }
 
-.star:after {
+.tree__star--top:after {
   position: absolute;
   height: 0;
   width: 0;
@@ -133,98 +128,98 @@ body {
   border-style: solid;
   border-width: 0 10px 20px 10px;
   border-color: transparent transparent #ffd105 transparent;
-  -webkit-transform: rotate(-35deg);
-  -moz-transform: rotate(-35deg);
-  -ms-transform: rotate(-35deg);
-  -o-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+  transform: rotate(-35deg);
+  transform: rotate(-35deg);
+  transform: rotate(-35deg);
 }
 
-.ornament {
+.tree__ornament {
   width: 12px;
   height: 12px;
   border-radius: 100%;
   background-color: #fff3a6;
 }
 
-.ornament--1 {
+.tree__ornament--1 {
   position: absolute;
   top: 30px;
   left: 40px;
 }
 
-.ornament--2 {
+.tree__ornament--2 {
   position: absolute;
   top: 30px;
   right: 40px;
 }
 
-.ornament--3 {
+.tree__ornament--3 {
   position: absolute;
   top: 20px;
   right: 10px;
 }
 
-.ornament--4 {
+.tree__ornament--4 {
   position: absolute;
   top: 15px;
   left: 10px;
 }
 
-.ornament--5 {
+.tree__ornament--5 {
   position: absolute;
   top: 50px;
   left: 70px;
 }
 
-.ornament--6 {
+.tree__ornament--6 {
   position: absolute;
   top: 30px;
   left: 35px;
 }
 
-.ornament--7 {
+.tree__ornament--7 {
   position: absolute;
   top: 30px;
   right: 35px;
 }
 
-.ornament--8 {
+.tree__ornament--8 {
   position: absolute;
   top: 50px;
   right: 70px;
 }
 
-.ornament--9 {
+.tree__ornament--9 {
   position: absolute;
   top: 70px;
   right: 90px;
 }
 
-.ornament--10 {
+.tree__ornament--10 {
   position: absolute;
   top: 50px;
   right: 60px;
 }
 
-.ornament--11 {
+.tree__ornament--11 {
   position: absolute;
   top: 30px;
   right: 25px;
 }
 
-.ornament--12 {
+.tree__ornament--12 {
   position: absolute;
   top: 70px;
   left: 90px;
 }
 
-.ornament--13 {
+.tree__ornament--13 {
   position: absolute;
   top: 50px;
   left: 60px;
 }
 
-.ornament--14 {
+.tree__ornament--14 {
   position: absolute;
   top: 30px;
   left: 25px;
