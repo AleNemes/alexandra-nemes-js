@@ -1,3 +1,4 @@
+// ^ undeva mai sus este pristine
 let lookbookPage = document.querySelector('.monochrome-lookbook');
 
 if (lookbookPage !== null) {
