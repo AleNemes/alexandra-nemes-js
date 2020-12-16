@@ -1,16 +1,7 @@
 class Tree {
-  constructor(
-    top = 50,
-    left = 100,
-    color = '#036d1e',
-    trunkColor = '#53350',
-    starColor = '#ffd105',
-  ) {
+  constructor(top = 50, left = 100) {
     this.top = top;
     this.left = left;
-    this.color = color;
-    this.trunkColor = trunkColor;
-    this.starColor = starColor;
   }
 
   frame = document.createElement('div');
@@ -35,6 +26,50 @@ class Tree {
   ornament12 = document.createElement('div');
   ornament13 = document.createElement('div');
   ornament14 = document.createElement('div');
+  glowInterval = 400;
+
+  LightsOn() {
+    if (this.intervalId === undefined) {
+      this.intervalId = setInterval(() => {
+        this.toggleLights();
+      }, this.glowInterval);
+    } else {
+      clearInterval();
+      this.ornament1.classList.remove('light--on');
+      this.ornament2.classList.remove('light--on');
+      this.ornament3.classList.remove('light--on');
+      this.ornament4.classList.remove('light--on');
+      this.ornament5.classList.remove('light--on');
+      this.ornament6.classList.remove('light--on');
+      this.ornament7.classList.remove('light--on');
+      this.ornament8.classList.remove('light--on');
+      this.ornament9.classList.remove('light--on');
+      this.ornament10.classList.remove('light--on');
+      this.ornament11.classList.remove('light--on');
+      this.ornament12.classList.remove('light--on');
+      this.ornament13.classList.remove('light--on');
+      this.ornament14.classList.remove('light--on');
+
+      delete this.intervalId;
+    }
+  }
+
+  toggleLights() {
+    this.ornament1.classList.toggle('light--on');
+    this.ornament2.classList.toggle('light--on');
+    this.ornament3.classList.toggle('light--on');
+    this.ornament4.classList.toggle('light--on');
+    this.ornament5.classList.toggle('light--on');
+    this.ornament6.classList.toggle('light--on');
+    this.ornament7.classList.toggle('light--on');
+    this.ornament8.classList.toggle('light--on');
+    this.ornament9.classList.toggle('light--on');
+    this.ornament10.classList.toggle('light--on');
+    this.ornament11.classList.toggle('light--on');
+    this.ornament12.classList.toggle('light--on');
+    this.ornament13.classList.toggle('light--on');
+    this.ornament14.classList.toggle('light--on');
+  }
 
   render() {
     this.frame.classList.add('frame');
@@ -45,22 +80,18 @@ class Tree {
 
     // treeTop
     this.treeTop.classList.add('tree__top');
-    this.treeTop.style.backgroundColor = this.color;
     this.tree.append(this.treeTop);
 
     // treeMiddle
     this.treeMiddle.classList.add('tree__middle');
-    this.treeMiddle.style.backgroundColor = this.color;
     this.tree.append(this.treeMiddle);
 
     //treeBottom
     this.treeBottom.classList.add('tree__bottom');
-    this.treeBottom.style.backgroundColor = this.color;
     this.tree.append(this.treeBottom);
 
     // trunk
     this.trunk.classList.add('tree__trunk');
-    this.trunk.style.backgroundColor = this.trunkColor;
     this.tree.append(this.trunk);
 
     // STAR
@@ -68,7 +99,6 @@ class Tree {
     this.tree.append(this.starContainer);
 
     this.star.classList.add('tree__star--top');
-    this.star.style.backgroundColor = this.starColor;
     this.starContainer.append(this.star);
 
     // treetop ornaments
@@ -98,6 +128,12 @@ class Tree {
     this.ornament12.classList.add('tree__ornament', 'tree__ornament--12');
     this.ornament13.classList.add('tree__ornament', 'tree__ornament--13');
     this.ornament14.classList.add('tree__ornament', 'tree__ornament--14');
+    this.treeBottom.append(this.ornament9);
+    this.treeBottom.append(this.ornament10);
+    this.treeBottom.append(this.ornament11);
+    this.treeBottom.append(this.ornament12);
+    this.treeBottom.append(this.ornament13);
+    this.treeBottom.append(this.ornament14);
 
     document.body.append(this.frame);
   }
@@ -105,6 +141,7 @@ class Tree {
 
 let tree1 = new Tree(500, 400);
 tree1.render();
+tree1.LightsOn();
 
 function createSnowFlake() {
   const snowFlake = document.createElement('i');
