@@ -120,5 +120,7 @@ car3.render();
 car2.render();
 
 car.render();
+car3.toggleHazards();
+car2.toggleLights();
 
 // car2 = new Car(left = 150px, top = 250px, 'red')
