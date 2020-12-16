@@ -78,6 +78,13 @@ class Tree {
     this.tree.classList.add('tree');
     this.frame.append(this.tree);
 
+    // STAR
+    this.starContainer.classList.add('tree__star');
+    this.tree.append(this.starContainer);
+
+    this.star.classList.add('tree__star--top');
+    this.starContainer.append(this.star);
+
     // treeTop
     this.treeTop.classList.add('tree__top');
     this.tree.append(this.treeTop);
@@ -93,13 +100,6 @@ class Tree {
     // trunk
     this.trunk.classList.add('tree__trunk');
     this.tree.append(this.trunk);
-
-    // STAR
-    this.starContainer.classList.add('tree__star');
-    this.tree.append(this.starContainer);
-
-    this.star.classList.add('tree__star--top');
-    this.starContainer.append(this.star);
 
     // treetop ornaments
     this.ornament1.classList.add('tree__ornament', 'tree__ornament--1');
@@ -142,6 +142,14 @@ class Tree {
 let tree1 = new Tree(500, 400);
 tree1.render();
 tree1.LightsOn();
+
+let tree2 = new Tree(300, 900);
+tree2.render();
+tree2.LightsOn();
+
+let tree3 = new Tree(200, 20);
+tree3.render();
+tree3.LightsOn();
 
 function createSnowFlake() {
   const snowFlake = document.createElement('i');
