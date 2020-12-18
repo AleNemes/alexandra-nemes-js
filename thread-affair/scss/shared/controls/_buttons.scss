@@ -10,3 +10,21 @@
 .btn-lg {
   padding: 18px 40px;
 }
+
+.glide__arrow {
+  border: 0;
+}
+
+.arrow {
+  font-size: 30px;
+}
+
+.chevron {
+  width: 38px;
+  height: 38px;
+  background-color: $brand-main;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
