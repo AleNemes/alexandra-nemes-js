@@ -1,39 +1,43 @@
 $(() => {
   const buildPersonList = () => {
     const ulClass = 'person-list';
-    $.ajax('http://localhost:8080/persons', {
+    fetch('http://localhost:8080/persons', {
       method: 'GET',
-    }).done((response) => {
-      let $ul = $(`.${ulClass}`);
+    })
+      .then((rawResponse) => {
+        return rawResponse.json();
+      })
+      .then((response) => {
+        let $ul = $(`.${ulClass}`);
 
-      if ($ul.length === 0) {
-        $ul = $('<ul>', {
-          class: ulClass,
+        if ($ul.length === 0) {
+          $ul = $('<ul>', {
+            class: ulClass,
+          });
+        }
+
+        $ul.empty();
+
+        response.persons.forEach((person) => {
+          const $li = $('<li>', {
+            text: person.name,
+          });
+
+          const $skillsUl = $('<ul>');
+
+          person.skills.forEach((skill) => {
+            $('<li>', {
+              text: skill,
+            }).appendTo($skillsUl);
+          });
+
+          $li.append($skillsUl);
+
+          $ul.append($li);
         });
-      }
 
-      $ul.empty();
-
-      response.persons.forEach((person) => {
-        const $li = $('<li>', {
-          text: person.name,
-        });
-
-        const $skillsUl = $('<ul>');
-
-        person.skills.forEach((skill) => {
-          $('<li>', {
-            text: skill,
-          }).appendTo($skillsUl);
-        });
-
-        $li.append($skillsUl);
-
-        $ul.append($li);
+        $ul.appendTo('body');
       });
-
-      $ul.appendTo('body');
-    });
   };
 
   buildPersonList();
@@ -80,7 +84,13 @@ $(() => {
       const $nameInput = $(event.target).find('input[name="name"]');
       requestBody.person.name = $nameInput.val();
 
-      $.post('http://localhost:8080/persons', requestBody).done(() => {
+      fetch('http://localhost:8080/persons', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      }).then(() => {
         $nameInput.val('');
         $('.skillsUl').empty();
         requestBody = {

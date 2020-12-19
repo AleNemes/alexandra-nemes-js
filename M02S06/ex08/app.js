@@ -1,9 +1,27 @@
+axios.interceptors.request.use(
+  (config) => {
+    // config = {
+    //   url: '',
+    //   method: '',
+    //   data: {}
+    // }
+    const { url, method, data } = config;
+    if (url.includes('/persons') && method === 'post') {
+      data.person.name = data.person.name.toUpperCase();
+    }
+
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  },
+);
+
 $(() => {
   const buildPersonList = () => {
     const ulClass = 'person-list';
-    $.ajax('http://localhost:8080/persons', {
-      method: 'GET',
-    }).done((response) => {
+    axios.get('http://localhost:8080/persons').then((axiosResponse) => {
+      let response = axiosResponse.data;
       let $ul = $(`.${ulClass}`);
 
       if ($ul.length === 0) {
@@ -80,7 +98,7 @@ $(() => {
       const $nameInput = $(event.target).find('input[name="name"]');
       requestBody.person.name = $nameInput.val();
 
-      $.post('http://localhost:8080/persons', requestBody).done(() => {
+      axios.post('http://localhost:8080/persons', requestBody).then(() => {
         $nameInput.val('');
         $('.skillsUl').empty();
         requestBody = {
